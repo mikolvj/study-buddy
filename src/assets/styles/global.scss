@@ -1,0 +1,15 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+body,
+a,
+button {
+	font-family: 'Montserrat', sans-serif;
+}

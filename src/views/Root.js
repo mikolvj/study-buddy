@@ -1,8 +1,10 @@
-import UsersList from '../components/UsersList/UsersList';
+import UsersList from '../components/organisms/UsersList/UsersList';
+import classes from './Root.module.scss';
+import '../assets/styles/global.scss';
 
 function Root() {
 	return (
-		<div className='App'>
+		<div className={classes.wrapper}>
 			<UsersList />
 		</div>
 	);
