@@ -1,9 +1,9 @@
 import classes from './Button.module.scss';
 import { ReactComponent as DeleteIcon } from '../../../assets/icons/delete-icon.svg';
 
-const CloseButton = () => {
+const CloseButton = (props) => {
 	return (
-		<button className={classes.styledButton}>
+		<button className={classes.styledButton} {...props}>
 			<DeleteIcon />
 		</button>
 	);
