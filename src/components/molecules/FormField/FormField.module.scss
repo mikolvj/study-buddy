@@ -1,0 +1,27 @@
+@import '../../../assets/styles/theme.scss';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	margin: 15px 0px;
+
+	label {
+		font-family: Montserrat, sans-serif;
+		font-weight: bold;
+		font-size: 12px;
+		margin: 10px 0;
+		color: $black;
+	}
+	input {
+		padding: 8px 8px;
+		border: 1px solid $grey;
+		box-sizing: border-box;
+		box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.09);
+		border-radius: 25px;
+
+		&:focus {
+			outline: none;
+			box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.3);
+		}
+	}
+}

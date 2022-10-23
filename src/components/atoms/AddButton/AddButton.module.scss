@@ -1,0 +1,17 @@
+@import '../../../assets/styles/theme.scss';
+.addButton {
+	margin: 15px 0;
+	padding: 7px 20px;
+	font-size: $s;
+	background-color: $darkGrey;
+	border-radius: 25px;
+	border: none;
+	font-weight: bold;
+	color: $white;
+	cursor: pointer;
+	transition: 0.3s;
+
+	&:hover {
+		background-color: $black;
+	}
+}

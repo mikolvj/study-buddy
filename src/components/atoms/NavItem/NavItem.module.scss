@@ -1,0 +1,45 @@
+@import '../../../assets/styles/theme.scss';
+
+a,
+a:active,
+a:visited {
+	color: $darkGrey;
+}
+.item {
+	position: relative;
+	text-decoration: none;
+	display: block;
+	text-align: right;
+	padding: 5px 15px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s;
+
+	&:hover {
+		color: $black;
+		&::after {
+			width: 10px;
+		}
+	}
+
+	&::after {
+		content: '';
+		height: 1px;
+		width: 1px;
+		position: absolute;
+		right: -1px;
+		top: 50%;
+		background-color: $darkGrey;
+		transition: 0.3s;
+	}
+}
+.itemActive::after {
+	content: '';
+	height: 1px;
+	width: 10px;
+	position: absolute;
+	right: -1px;
+	top: 50%;
+	background-color: $darkGrey;
+	transition: 0.3s;
+}

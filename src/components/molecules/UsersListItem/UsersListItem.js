@@ -1,15 +1,15 @@
-import { PropTypes } from 'prop-types';
 import classes from './UsersListItem.module.scss';
-import CloseButton from '../../atoms/Button/Button';
+import CloseButton from '../../atoms/CloseButton/CloseButton';
+import { useContext } from 'react';
+import { UsersContext } from '../../../providers/UsersProvider';
 
-const UsersListItem = ({
-	deleteUser,
-	userData: { average, name, attendance = '0%' },
-}) => {
+const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => {
 	let grade;
 	if (Number(average) > 4) grade = classes.gradeGreen;
 	else if (Number(average) > 3) grade = classes.gradeYellow;
 	else grade = classes.gradeRed;
+
+	const { deleteUser } = useContext(UsersContext);
 
 	return (
 		<li className={classes.wrapper}>
@@ -23,14 +23,17 @@ const UsersListItem = ({
 	);
 };
 
-// sprawdzanie poprawności propsów - czyli, czy mają poprawny typ danych. isRequired - wartość wymagana
-UsersListItem.propTypes = {
-	userData: PropTypes.shape({
-		average: PropTypes.string,
-		name: PropTypes.string.isRequired,
-		attendance: PropTypes.string,
-	}),
-};
+// // sprawdzanie poprawności propsów - czyli, czy mają poprawny typ danych. isRequired - wartość wymagana
+//
+// wymaga importu PropTypes from react
+//
+// UsersListItem.propTypes = {
+// 	userData: PropTypes.shape({
+// 		average: PropTypes.string,
+// 		name: PropTypes.string.isRequired,
+// 		attendance: PropTypes.string,
+// 	}),
+// };
 
 export default UsersListItem;
 
