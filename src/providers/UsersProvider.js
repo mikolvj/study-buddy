@@ -23,7 +23,7 @@ const UsersProvider = ({ children }) => {
 	const [users, setUsers] = useState([]);
 	const [isLoading, setLoadingState] = useState([]);
 
-	const handlerAddUser = (f) => {
+	const handleAddUser = (f) => {
 		const newUser = {
 			name: f.name,
 			attendance: f.attendance,
@@ -50,7 +50,7 @@ const UsersProvider = ({ children }) => {
 		<UsersContext.Provider
 			value={{
 				users,
-				handlerAddUser,
+				handleAddUser,
 				deleteUser,
 				isLoading,
 			}}

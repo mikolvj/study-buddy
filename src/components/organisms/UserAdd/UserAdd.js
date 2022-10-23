@@ -1,8 +1,17 @@
 import classes from './UserAdd.module.scss';
+import { useRef, useEffect } from 'react';
 import FormField from '../../molecules/FormField/FormField';
 import AddButton from '../../atoms/AddButton/AddButton';
 
 const UserAdd = ({ handleSubmit, formValue, handleSetFormValue }) => {
+	const ref = useRef(null);
+
+	useEffect(() => {
+		if (ref.current) {
+			ref.current.focus();
+		}
+	}, []);
+
 	return (
 		<form className={classes.wrapper} onSubmit={handleSubmit}>
 			<h1>Add new user</h1>
@@ -12,6 +21,7 @@ const UserAdd = ({ handleSubmit, formValue, handleSetFormValue }) => {
 				name='name'
 				value={formValue.name}
 				onChange={handleSetFormValue}
+				ref={ref}
 			/>
 			<FormField
 				label='Attendance'
