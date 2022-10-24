@@ -1,0 +1,19 @@
+@import '../../../assets/styles/theme.scss';
+
+.newsWrapper {
+	grid-column: 3/4;
+	grid-row: 1/3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-left: solid 1px $darkGrey;
+	overflow: scroll;
+}
+
+h2 {
+	margin-top: 50px;
+	padding: 0 40px;
+	width: 100%;
+	color: $darkGrey;
+	text-align: left;
+}

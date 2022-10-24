@@ -2,8 +2,6 @@ import classes from './NavBar.module.scss';
 import NavHeader from '../../atoms/NavHeader/NavHeader';
 import NavItem from '../../atoms/NavItem/NavItem';
 
-const itemActive = 'itemActive';
-
 const NavBar = () => {
 	return (
 		<div className={classes.wrapper}>
