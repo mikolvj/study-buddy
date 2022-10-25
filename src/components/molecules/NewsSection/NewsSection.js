@@ -29,7 +29,6 @@ const NewsSection = () => {
 				}
 			)
 			.then(({ data: { data } }) => setArticles(data.allArticles))
-			.then((data) => console.log(data))
 			.catch((err) =>
 				setError('An API error occured. Please contact the support.')
 			);
