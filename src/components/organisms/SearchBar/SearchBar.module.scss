@@ -39,28 +39,30 @@
 	}
 }
 
-.searchWrapper{
+.searchWrapper {
 	position: relative;
 	z-index: 1;
 }
 
-.searchList{
-position: absolute;
-left: 30px;
-list-style-type: none;
-width:100%;
-max-height:400px;
-overflow-y:scroll;
-border-radius: 15px;
-box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.3);
+.searchList {
+	position: absolute;
+	left: 30px;
+	list-style-type: none;
+	width: 100%;
+	max-height: 400px;
+	overflow-y: scroll;
+	border-radius: 15px;
+	box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.3);
 }
 
-.searchItem{
+.searchItem {
 	padding: 20px;
-	background-color:$white;
+	background-color: $white;
 	border-bottom: solid 1px $grey;
+}
 
-	&:hover, &:active, &:focus{
-		background: $lightGrey;
-	}
+.high,
+.searchItem:hover {
+	background-color: $lightGrey;
+	font-weight: bold;
 }
