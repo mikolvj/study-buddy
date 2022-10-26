@@ -38,7 +38,7 @@ const NewsSection = () => {
 		<>
 			{articles.length > 0 ? (
 				articles.map(({ title, category, content, image }) => (
-					<Wrapper>
+					<Wrapper key={title}>
 						<div className={classes.articleWrapper} key={title}>
 							<h3 className={classes.title}>{title}</h3>
 							<p className={classes.category}>{category}</p>

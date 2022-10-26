@@ -6,7 +6,7 @@ const NavBar = () => {
 	return (
 		<div className={classes.wrapper}>
 			<NavHeader />
-			<NavItem href='/' name='Home'></NavItem>
+			<NavItem href='/dashboard' name='Dashboard'></NavItem>
 			<NavItem href='/add-user' name='Add user'></NavItem>
 		</div>
 	);

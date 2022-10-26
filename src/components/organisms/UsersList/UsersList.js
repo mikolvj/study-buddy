@@ -3,15 +3,16 @@ import classes from './UsersList.module.scss';
 import { useContext } from 'react';
 import { UsersContext } from '../../../providers/UsersProvider';
 
-const UsersList = () => {
-	const { isLoading, users } = useContext(UsersContext);
+const UsersList = ({ students }) => {
+	const { isLoading } = useContext(UsersContext);
+
 	return (
 		<div className={classes.wrapper}>
 			<h1>{isLoading ? 'Loading...' : 'Users List'}</h1>
 			<ul className={classes.styledList}>
-				{users.map((userData, i) => {
+				{students.map((students, i) => {
 					return (
-						<UsersListItem key={userData.name} userData={userData} index={i} />
+						<UsersListItem key={students.name} users={students} index={i} />
 					);
 				})}
 			</ul>

@@ -3,7 +3,7 @@ import CloseButton from '../../atoms/CloseButton/CloseButton';
 import { useContext } from 'react';
 import { UsersContext } from '../../../providers/UsersProvider';
 
-const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => {
+const UsersListItem = ({ users: { average, name, attendance = '0%' } }) => {
 	let grade;
 	if (Number(average) > 4) grade = classes.gradeGreen;
 	else if (Number(average) > 3) grade = classes.gradeYellow;
