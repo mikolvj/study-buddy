@@ -3,7 +3,10 @@ import CloseButton from '../../atoms/CloseButton/CloseButton';
 import { useContext } from 'react';
 import { UsersContext } from '../../../providers/UsersProvider';
 
-const UsersListItem = ({ users: { average, name, attendance = '0%' } }) => {
+const UsersListItem = ({
+	onClick,
+	users: { average, name, attendance = '0%' },
+}) => {
 	let grade;
 	if (Number(average) > 4) grade = classes.gradeGreen;
 	else if (Number(average) > 3) grade = classes.gradeYellow;
@@ -12,7 +15,7 @@ const UsersListItem = ({ users: { average, name, attendance = '0%' } }) => {
 	const { deleteUser } = useContext(UsersContext);
 
 	return (
-		<li className={classes.wrapper}>
+		<li className={classes.wrapper} onClick={onClick}>
 			<div className={`${classes.average} ${grade}`}>{average}</div>
 			<div>
 				<p className={classes.name}>{name}</p>

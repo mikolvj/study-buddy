@@ -5,7 +5,7 @@ import AddButton from '../../atoms/AddButton/AddButton';
 
 const modalContainer = document.getElementById('modal-container');
 
-const Modal = ({ handleClose }) => {
+const Modal = ({ handleClose, children }) => {
 	const modalNode = document.createElement('div');
 
 	useEffect(() => {
@@ -18,7 +18,8 @@ const Modal = ({ handleClose }) => {
 
 	return ReactDOM.createPortal(
 		<div className={classes.modal}>
-			Hello world.<AddButton btnLabel='Close' onClick={handleClose}></AddButton>
+			{children}
+			<AddButton btnLabel='Close' onClick={handleClose}></AddButton>
 		</div>,
 		modalNode
 	);

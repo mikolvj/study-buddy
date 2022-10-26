@@ -3,7 +3,7 @@ import classes from './UsersList.module.scss';
 import { useContext } from 'react';
 import { UsersContext } from '../../../providers/UsersProvider';
 
-const UsersList = ({ students }) => {
+const UsersList = ({ students, handleOpenStudentDetails }) => {
 	const { isLoading } = useContext(UsersContext);
 
 	return (
@@ -12,7 +12,12 @@ const UsersList = ({ students }) => {
 			<ul className={classes.styledList}>
 				{students.map((students, i) => {
 					return (
-						<UsersListItem key={students.name} users={students} index={i} />
+						<UsersListItem
+							onClick={() => handleOpenStudentDetails(students.id)}
+							key={students.name}
+							users={students}
+							index={i}
+						/>
 					);
 				})}
 			</ul>
