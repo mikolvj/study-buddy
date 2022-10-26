@@ -33,7 +33,7 @@ const SearchBar = () => {
 			></input>
 			{searchPhrase && matchingStudents.length ? (
 				<ul>
-					{matchingStudents.localeCompare((student) => (
+					{matchingStudents.map((student) => (
 						<li key={student.id}>{student.name}</li>
 					))}
 				</ul>

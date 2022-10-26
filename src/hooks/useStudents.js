@@ -7,7 +7,7 @@ export const useStudents = () => {
 	// const { users } = useContext(UsersContext);
 	const [students, setStudents] = useState([]);
 	const [groups, setGroups] = useState([]);
-    const { groupId } = useParams();
+	const { groupId } = useParams();
 
 	useEffect(() => {
 		axios
@@ -26,7 +26,7 @@ export const useStudents = () => {
 	const findStudents = async (searchPhrase) => {
 		try {
 			const { data } = await axios.post(`/users/search`, {
-				searchPhrase
+				searchPhrase,
 			});
 			return data;
 		} catch (e) {
@@ -38,6 +38,6 @@ export const useStudents = () => {
 		students,
 		groups,
 		findStudents,
-        groupId
+		groupId,
 	};
 };
