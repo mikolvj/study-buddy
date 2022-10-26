@@ -1,7 +1,11 @@
 import classes from './AddButton.module.scss';
 
-const AddButton = ({ btnLabel }) => {
-	return <button className={classes.addButton}>{btnLabel}</button>;
+const AddButton = ({ btnLabel, onClick }) => {
+	return (
+		<button className={classes.addButton} onClick={onClick}>
+			{btnLabel}
+		</button>
+	);
 };
 
 export default AddButton;
