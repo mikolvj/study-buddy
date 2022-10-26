@@ -24,6 +24,7 @@ const SearchBar = () => {
 				<h4>Logged as:</h4>
 				<h3>Teacher</h3>
 			</div>
+			<div className={classes.searchWrapper}>
 			<input
 				className={classes.searchInput}
 				placeholder='Search'
@@ -32,12 +33,12 @@ const SearchBar = () => {
 				name='Search'
 			></input>
 			{searchPhrase && matchingStudents.length ? (
-				<ul>
+				<ul className={classes.searchList}>
 					{matchingStudents.map((student) => (
-						<li key={student.id}>{student.name}</li>
+						<li className={classes.searchItem}key={student.id}>{student.name}</li>
 					))}
 				</ul>
-			) : null}
+			) : null}</div>
 		</div>
 	);
 };
