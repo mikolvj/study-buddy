@@ -25,7 +25,7 @@ const Dashboard = () => {
 				handleOpenStudentDetails={handleOpenStudentDetails}
 			/>
 			{isOpen ? (
-				<Modal handleClose={handleCloseModal}>{currentStudent.name}</Modal>
+				<Modal handleClose={handleCloseModal} student={currentStudent} />
 			) : null}
 		</Wrapper>
 	);
