@@ -7,12 +7,13 @@ import { useState } from 'react';
 import Modal from '../components/organisms/Modals/Modal';
 
 const Dashboard = () => {
-	const { groups, students, groupId } = useStudents();
+	const { groups, students, groupId, getStudentById } = useStudents();
 	const [currentStudent, setCurrentStudent] = useState();
 	const { Modal, isOpen, handleOpenModal, handleCloseModal } = useModal();
 
-	const handleOpenStudentDetails = (id) => {
-		setCurrentStudent(id);
+	const handleOpenStudentDetails = async (id) => {
+		const student = await getStudentById(id);
+		setCurrentStudent(student);
 		handleOpenModal();
 	};
 
@@ -24,7 +25,7 @@ const Dashboard = () => {
 				handleOpenStudentDetails={handleOpenStudentDetails}
 			/>
 			{isOpen ? (
-				<Modal handleClose={handleCloseModal}>{currentStudent}</Modal>
+				<Modal handleClose={handleCloseModal}>{currentStudent.name}</Modal>
 			) : null}
 		</Wrapper>
 	);
