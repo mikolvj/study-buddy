@@ -9,7 +9,7 @@ import Modal from '../components/organisms/Modals/Modal';
 const Dashboard = () => {
 	const { groups, students, groupId, getStudentById } = useStudents();
 	const [currentStudent, setCurrentStudent] = useState();
-	const { Modal, isOpen, handleOpenModal, handleCloseModal } = useModal();
+	const { isOpen, handleOpenModal, handleCloseModal } = useModal();
 
 	const handleOpenStudentDetails = async (id) => {
 		const student = await getStudentById(id);
